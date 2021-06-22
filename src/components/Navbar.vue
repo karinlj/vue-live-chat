@@ -4,12 +4,26 @@
       <p>Hej there...display name</p>
       <p class="email">Currently logged in as...</p>
     </div>
-    <button>Logout</button>
+    <button @click="handleClick">Logout</button>
   </nav>
 </template>
 
 <script>
-export default {};
+import useLogout from "../composables/useLogout";
+export default {
+  setup() {
+    const { logout, error } = useLogout();
+
+    //need to be async since logout() is async so need to await it
+    const handleClick = async () => {
+      await logout();
+      if (!error.value) {
+        console.log("User logged out");
+      }
+    };
+    return { handleClick };
+  },
+};
 </script>
 
 <style>
