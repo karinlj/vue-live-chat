@@ -1,24 +1,45 @@
 # live-chat
 
-## Project setup
+## Description
+
+Live chat app built in Vue 3
+
+## Prerequisites
+
+NodeJS
+
+## Installation
+
+To clone
+`git clone https://github.com/karinlj/vue-live-chat.git`
+
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+## To run
+
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+## To build
+
 ```
 npm run build
 ```
 
-### Run your unit tests
-```
-npm run test:unit
-```
+Then use the dist folder you get.
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Built With
+
+- vue.js 3
+- CSS
+
+## Author
+
+- **Karin Ljunggren** - [karinlj](https://github.com/karinlj)
+
+## Acknowledgements
+
+Thank's to [The Net Ninja](https://www.udemy.com/course/build-web-apps-with-vuejs-firebase/).
