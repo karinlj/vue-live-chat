@@ -19,7 +19,7 @@ const login = async (email, password) => {
     // }
     //reset again
     error.value = null;
-    console.log("response: ", response);
+    //  console.log("response: ", response);
     return response;
   } catch (err) {
     console.log("err: ", err.message);
