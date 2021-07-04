@@ -1,7 +1,11 @@
 <template>
   <div class="welcome container">
     <p>Welcome</p>
+<<<<<<< HEAD
     <p>added p</p>
+=======
+    <p>added master line</p>
+>>>>>>> 57e9a8aec388a5b4dace63f19445182a5c890c85
     <div v-if="showLogin">
       <h2>Login</h2>
       <LoginForm @login="enterChat" />
