@@ -1,7 +1,7 @@
 <template>
   <div class="welcome container">
     <p>Welcome</p>
-    <p>Welcome again</p>
+    <p>Branch paragraph</p>
     <div v-if="showLogin">
       <h2>Login</h2>
       <LoginForm @login="enterChat" />
