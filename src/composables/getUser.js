@@ -8,7 +8,7 @@ const user = ref(projectAuth.currentUser);
 //read logn changes
 projectAuth.onAuthStateChanged((myuser) => {
   //callback func as arg
-  console.log("user state change. Current user is: ", myuser);
+  // console.log("user state change. Current user is: ", myuser);
   user.value = myuser;
 });
 
