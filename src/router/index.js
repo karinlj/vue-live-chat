@@ -13,11 +13,21 @@ const requireAuth = (to, from, next) => {
   }
   next(); //allows vue-router to go where it was going
 };
+
+const requireNoAuth = (to, from, next) => {
+  let user = projectAuth.currentUser;
+  console.log("current user", user);
+  if (user) {
+    next({ name: "Chatroom" });
+  }
+  next();
+};
 const routes = [
   {
     path: "/",
     name: "Welcome",
     component: Welcome,
+    beforeEnter: requireNoAuth,
   },
   {
     path: "/chatroom",

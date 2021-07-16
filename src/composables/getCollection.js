@@ -1,4 +1,4 @@
-import { ref } from "@vue/reactivity";
+import { ref, watchEffect } from "vue";
 import { projectFirestore } from "../firebase/config";
 
 //get docs from the collection
@@ -10,8 +10,10 @@ const getCollection = (collection) => {
     .collection(collection)
     .orderBy("createdAt");
   //a snap for every change
-  collectionRef.onSnapshot(
+  //function unSub...???
+  const unSub = collectionRef.onSnapshot(
     (snap) => {
+      console.log("snapshot");
       let results = [];
       snap.docs.forEach((doc) => {
         console.log("doc.data: ", doc.data());
@@ -30,6 +32,11 @@ const getCollection = (collection) => {
     }
   );
   console.log("docs: ", docs);
+
+  watchEffect((onInvalidate) => {
+    //I want to unsubscribe from the the collection when onInvalidate() changes i.e when the component unmounts
+    onInvalidate(() => unSub());
+  });
   return { error, docs };
 };
 export default getCollection;
